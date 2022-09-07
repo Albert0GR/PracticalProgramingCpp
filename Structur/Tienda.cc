@@ -55,6 +55,8 @@ int main ()
   printf ("# Producto: %d\n", daniel.numProducto);
   printf ("Cantidad: %d\n", daniel.cantidad);
   daniel.total = daniel.cantidad * productos[0].precio;
-  printf ("Total: $ %0.2f\n", daniel.total);
+  printf ("Total: $ %8.2f\n", daniel.total);
+  daniel.total = daniel.total - productos[0].descuento;
+  printf ("Total con descuento: $ %8.2f\n", daniel.total);
   return 0;
 }

@@ -2,7 +2,7 @@
 #include<string.h>
 //string type definitions
 #define STRMAX 40
-typedef char MyStringType[STRMAX];                   
+typedef char MyStringType[STRMAX];  //declares a new type of string                    
 
 int main(int argc, char const *argv[])
 {
@@ -18,3 +18,4 @@ int main(int argc, char const *argv[])
     printf("%s, %s \n", myMessage ,yourName);  
     return 0;
 }
+

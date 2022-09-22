@@ -1,0 +1,40 @@
+/******************************************************************************
+Apuntadores y paso de parámetro por referencia.
+*******************************************************************************/
+#include <stdio.h>
+
+void inicializaValor(int tam, int n[20])
+{
+    for(int j=0; j<tam; j++)
+        n[j] = j*20;
+}
+void despliega(int tam, int *n)
+{
+    for(int j=0; j<tam; j++)
+        printf("num[%d] = %d \n", j, *(n+j));
+}
+void inicializaReferencia(int tam, int *n)
+{
+    for(int j=0; j<tam; j++)
+        *(n++) = j*20;
+}
+
+int main()
+{
+    /*definir variables de tipo apuntador */
+    int tam, *ap_i, num[20];
+    
+    /* inicializar variables */
+    ap_i = num;
+    
+    printf("Paso de parámetros por valor\n");
+    inicializaValor(20, num);  /* paso de parámetros por valor - hace una copia */
+    despliega(20, num);
+    
+    printf("Paso de parámetros por referencia\n");
+    inicializaReferencia(20, num); /* paso de parámetros por referencia - copia el apuntador al arreglo */
+    despliega(20, num);
+
+    return 0;
+}
+
